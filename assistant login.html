@@ -10,7 +10,7 @@
 
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Segoe UI", Arial, sans-serif;
             background: #f1f5f9;
             margin: 0;
             padding: 0;
@@ -19,7 +19,7 @@
         /* HEADER */
         header {
             background: #ffffff;
-            padding: 15px 30px;
+            padding: 18px 35px;
             border-bottom: 1px solid #e5e7eb;
             display: flex;
             justify-content: space-between;
@@ -28,9 +28,9 @@
 
         header h1 {
             margin: 0;
-            font-size: 22px;
+            font-size: 26px;
             color: #0f172a;
-            font-weight: bold;
+            font-weight: 700;
         }
 
         header h1 span {
@@ -39,7 +39,8 @@
 
         header a {
             color: #2563eb;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 16px;
             text-decoration: none;
         }
 
@@ -53,18 +54,19 @@
 
         /* WRAPPER */
         .wrapper {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 40px auto;
             display: flex;
             background: #fff;
-            border-radius: 12px;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            height: 620px;
         }
 
         /* IMAGE SECTION */
         .image-section {
-            width: 35%;
+            width: 55%;
             position: relative;
         }
 
@@ -72,104 +74,116 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
         }
 
         .image-overlay {
             position: absolute;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            background: linear-gradient(to top, rgba(15,23,42,0.85), rgba(15,23,42,0.2));
-            padding: 25px;
-            border-radius: 10px;
+            bottom: 25px;
+            left: 25px;
+            right: 25px;
+            background: linear-gradient(to top, rgba(15,23,42,0.9), rgba(15,23,42,0.3));
+            padding: 30px;
+            border-radius: 12px;
             color: white;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
         }
 
         .image-overlay h3 {
             margin: 0;
-            font-size: 24px;
+            font-size: 30px;
             font-weight: 700;
-            line-height: 1.2;
         }
 
         .image-overlay p {
-            margin: 0;
-            font-size: 14px;
-            line-height: 1.5;
+            margin-top: 10px;
+            font-size: 16px;
+            line-height: 1.6;
             color: #e0e7ff;
-        }
-
-        .image-overlay p strong {
-            font-weight: 700;
         }
 
         /* FORM SECTION */
         .form-section {
-            width: 65%;
-            padding: 30px;
+            width: 45%;
+            padding: 45px 40px;
         }
 
         .form-section h2 {
+            font-size: 32px;
+            font-weight: 700;
             color: #0f172a;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .form-section p {
             color: #64748b;
-            font-size: 14px;
-            margin-bottom: 25px;
+            font-size: 18px;
+            margin-bottom: 35px;
         }
 
         .row {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 15px;
+            margin-bottom: 22px;
         }
 
         label {
-            font-size: 11px;
-            font-weight: bold;
-            color: #475569;
-            margin-bottom: 5px;
+            display: block;
+            font-size: 18px;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 8px;
         }
 
         input {
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #cbd5f5;
-            font-size: 14px;
             width: 100%;
+            padding: 14px 16px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            font-size: 18px;
+            transition: all 0.2s ease;
+        }
+
+        input::placeholder {
+            color: #94a3b8;
         }
 
         input:focus {
             outline: none;
             border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        .forgot {
+            text-align: right;
+            margin-top: -10px;
+        }
+
+        .forgot a {
+            color: #2563eb;
+            font-size: 14px;
+            text-decoration: underline;
         }
 
         button {
             width: 100%;
-            margin-top: 25px;
-            padding: 14px;
-            background: #2563eb;
+            margin-top: 100px;
+            padding: 16px;
+            background: linear-gradient(to right, #2563eb, #1d4ed8);
             border: none;
             color: white;
-            font-size: 14px;
-            font-weight: bold;
-            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 10px;
             cursor: pointer;
+            letter-spacing: 1px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         button:hover {
-            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
         }
 
         footer {
             text-align: center;
-            font-size: 11px;
+            font-size: 13px;
             color: #94a3b8;
             margin-top: 30px;
             padding-bottom: 20px;
@@ -178,10 +192,11 @@
         @media (max-width: 768px) {
             .wrapper {
                 flex-direction: column;
+                height: auto;
             }
             .image-section {
                 width: 100%;
-                height: 220px;
+                height: 240px;
             }
             .form-section {
                 width: 100%;
@@ -194,7 +209,7 @@
 <!-- HEADER -->
 <header>
     <div style="display:flex; align-items:center; gap:10px;">
-        <span class="material-symbols-outlined" style="color:#2563eb; font-size:28px;">pulmonology</span>
+        <span class="material-symbols-outlined" style="color:#2563eb; font-size:32px;">pulmonology</span>
         <h1>COPD<span>Detection</span></h1>
     </div>
     <a href="register.html">Register</a>
@@ -216,25 +231,21 @@
     <!-- FORM SECTION -->
     <div class="form-section">
         <h2>Assistant Login</h2>
-        <p>Please enter your credentials to login.</p>
+        <p>Please enter your credentials to continue.</p>
 
         <form>
             <div class="row">
-                <div class="field">
-                    <label for="staffid">Staff ID</label>
-                    <input type="text" id="staffid" placeholder="Enter Staff ID" required>
-                </div>
+                <label for="staffid">Staff ID</label>
+                <input type="text" id="staffid" placeholder="Enter Staff ID" required>
             </div>
 
             <div class="row">
-                <div class="field">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter Password" required>
-                </div>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter Password" required>
             </div>
 
-            <div class="row" style="justify-content: flex-end;">
-                <a href="#" style="color:#2563eb; font-size:12px; text-decoration:underline;">Forgot password?</a>
+            <div class="forgot">
+                <a href="#">Forgot password?</a>
             </div>
 
             <button type="submit">LOGIN</button>
@@ -242,7 +253,6 @@
     </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
     © 2024 COPD Detection System – Authorized clinical personnel access only
 </footer>
